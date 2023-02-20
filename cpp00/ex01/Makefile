@@ -1,20 +1,23 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 16:08:38 by sharrach          #+#    #+#              #
-#    Updated: 2023/02/13 16:21:02 by sharrach         ###   ########.fr        #
+#    Updated: 2023/02/20 18:09:47 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-HEADER = PhoneBook.hpp
+HEADER = PhoneBook.hpp\
+		 Contact.hpp
 
-SRCS =	PhoneBook.cpp
+SRCS =	PhoneBook.cpp\
+		contact.cpp\
+		main.cpp
 
 CC =	c++
 

@@ -6,11 +6,12 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:09:09 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 16:40:29 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/23 19:26:22 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <sstream>
 
 PhoneBook::PhoneBook() {
 	this->i = 0;
@@ -22,6 +23,11 @@ Contact	PhoneBook::get_contact(int i){
 }
 
 void PhoneBook::contact_search(){
+	
+	std::stringstream convert;
+	std::string	choice;
+	int index;
+
 	std::cout << " ___________________________________________" << std::endl;
 	std::cout << "|" << std::setw(10) << std::right << "index";
 	std::cout << "|" << std::setw(10) << std::right << "first name";
@@ -55,19 +61,25 @@ void PhoneBook::contact_search(){
 			std::cout << " -------------------------------------------" << std::endl;
 		}
 	}
-	int	choice;
 	std::cout << "Enter a valid number: ";
-	std::cin >> choice;
-	std::cout << choice << std::endl ;
-	if (!isdigit(choice) || (choice > 7 || choice < 0) || choice >= this->n){
+	if(!getline(std::cin,choice))
+		return ;
+	if ((choice > "7" || choice < "0")){
 		std::cout << "not valid choice." << std::endl;
 		return ;
 	}
-	std::cout << "first name : " << this->get_contact(choice).getfirstname() << std::endl;
-	std::cout << "last name : " << this->get_contact(choice).getlastname() << std::endl;
-	std::cout << "nick name : " << this->get_contact(choice).getnickname() << std::endl;
-	std::cout << "darkest secret: " << this->get_contact(choice).getdarkestsecret() << std::endl;
-	std::cout << "phone number: " << this->get_contact(choice).getnumber() << std::endl;
+	std::cout <<"hwllo world" << std::endl;
+	convert << choice;
+	convert >> index;
+	if (index >= this->n){
+		std::cout << "not valid choice." << std::endl;
+		return ;
+	}
+	std::cout << "first name : " << this->get_contact(index).getfirstname() << std::endl;
+	std::cout << "last name : " << this->get_contact(index).getlastname() << std::endl;
+	std::cout << "nick name : " << this->get_contact(index).getnickname() << std::endl;
+	std::cout << "darkest secret: " << this->get_contact(index).getdarkestsecret() << std::endl;
+	std::cout << "phone number: " << this->get_contact(index).getnumber() << std::endl;
 }
 
 void PhoneBook::add_contact(){

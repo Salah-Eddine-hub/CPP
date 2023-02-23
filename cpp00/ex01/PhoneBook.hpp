@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:09:12 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/20 23:09:37 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:52:36 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,13 @@
 
 class PhoneBook{
 public:
-	PhoneBook() = default;
-	PhoneBook(Contact contacts){
-		this->contacts = contacts;
-	}
-	// void add();
-	Contact get_contact();
-	// int	getindex();
-	void set_contact(const Contact& contacts);
+	PhoneBook();
+	Contact	get_contact(int i);
+	void	contact_search();
+	void	add_contact();
 private:
-	Contact contacts;
-	int		i = 0;
+	Contact contacts[8];
+	int		i;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:29:22 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/20 23:46:40 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:53:56 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int ac, char **av)
 {
 	PhoneBook	phonelist;
-	std::string	hh;
+	std::string	input;
 	
 	(void)av;
 	if (ac != 1){
@@ -25,18 +25,15 @@ int main(int ac, char **av)
 	std::cout << "           *****PhoneBook*****" << std::endl;
 	while(1){
 		std::cout<< ">> ";
-		std::getline(std::cin, hh);
-		if (hh == "ADD"){
-			phonelist.get_contact().setfirstname();
-			phonelist.get_contact().setlastname();
-			phonelist.get_contact().setnickname();
-			phonelist.get_contact().setdarkestsecret();
-			phonelist.get_contact().setnumber();
-			continue;
+		std::getline(std::cin, input);
+		if (input == "ADD"){
+			phonelist.add_contact();
 		}
-		if (hh == "SEARCH"){
-			std::cout << phonelist.get_contact().getfirstname();
+		else if (input == "SEARCH"){
+			phonelist.contact_search();
 		}
+		else if (input == "EXIT")
+			break;
 	}
 	return 0;
 }

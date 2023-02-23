@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/13 16:08:38 by sharrach          #+#    #+#              #
-#    Updated: 2023/02/20 18:09:47 by sharrach         ###   ########.fr        #
+#    Created: 2023/02/23 12:13:45 by sharrach          #+#    #+#              #
+#    Updated: 2023/02/23 12:45:09 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ HEADER = PhoneBook.hpp\
 		 Contact.hpp
 
 SRCS =	PhoneBook.cpp\
-		contact.cpp\
+		Contact.cpp\
 		main.cpp
 
 CC =	c++

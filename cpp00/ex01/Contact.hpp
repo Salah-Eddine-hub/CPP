@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:43:16 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/20 23:45:29 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:44:57 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,21 @@
 #include <cctype>
 #include <fstream>
 
-
 class Contact{
 public:
-	Contact() = default;
+	// Contact();
 //getter
-	std::string &getfirstname();
-	std::string getlastname();
-	std::string getnickname();
-	std::string getdarkestsecret();
-	std::string getnumber();
+	std::string getfirstname() const;
+	std::string getlastname() const;
+	std::string getnickname() const;
+	std::string getdarkestsecret() const;
+	std::string getnumber() const;
 //setter
-	void setfirstname();
-	void setlastname();
-	void setnickname();
-	void setdarkestsecret();
-	void setnumber();
-	// Contact(std::string FirstName, std::string LastName, std::string NickName, std::string DarkestSecret, std::string Number){
-	// 	this->FirstName = FirstName;
-	// 	this->LastName = LastName;
-	// 	this->NickName = NickName;
-	// 	this->DarkestSecret = DarkestSecret;
-	// 	this->Number = Number;
-	// }
+	void setfirstname(std::string firstname);
+	void setlastname(std::string lastname);
+	void setnickname(std::string nickname);
+	void setdarkestsecret(std::string darkestsecret);
+	void setnumber(std::string number);
 private:
 	std::string	FirstName;
 	std::string	LastName;

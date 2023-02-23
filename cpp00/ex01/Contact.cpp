@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:58:43 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 12:29:12 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:35:05 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ void Contact::setdarkestsecret(std::string darkestsecret){
 void Contact::setnumber(std::string number){
 	this->Number = number;
 }
-
-	// std::string Number;
-	// std::cout << ">> Enter the phone number: ";
-	// std::getline(std::cin, Number);
 
 std::string Contact::getfirstname() const{
 	return this->FirstName;

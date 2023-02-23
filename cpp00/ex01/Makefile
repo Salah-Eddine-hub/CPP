@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 12:13:45 by sharrach          #+#    #+#              #
-#    Updated: 2023/02/23 12:45:09 by sharrach         ###   ########.fr        #
+#    Updated: 2023/02/23 16:30:39 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS =	PhoneBook.cpp\
 
 CC =	c++
 
-CPPFLAGS =	-Wall -Wextra -Werror
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 OBJS =	$(SRCS:.cpp=.o)
 

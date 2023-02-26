@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 23:53:02 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/25 14:16:31 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/26 13:19:08 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	void announce();
 private:
 	std::string name;
-}
+};
 
 Zombie *newZombie(std::string name);
 void randomChump(std::string name);

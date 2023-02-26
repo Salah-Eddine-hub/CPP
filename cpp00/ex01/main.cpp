@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 15:29:22 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 22:04:56 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/26 12:13:52 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	while(input != "EXIT"){
 		std::cout << ">>"; 
 		
-		if (!getline(std::cin, input))
+		if (!std::getline(std::cin, input))
 			break;
 		if (input == "ADD"){
 			phonelist.add_contact();

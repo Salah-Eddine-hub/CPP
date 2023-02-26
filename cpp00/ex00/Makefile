@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 14:12:02 by sharrach          #+#    #+#              #
-#    Updated: 2023/02/13 15:24:20 by sharrach         ###   ########.fr        #
+#    Updated: 2023/02/26 12:05:18 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS =	megaphone.cpp
 
 CC =	c++
 
-CPPFLAGS =	-Wall -Wextra -Werror
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 OBJS =	$(SRCS:.cpp=.o)
 

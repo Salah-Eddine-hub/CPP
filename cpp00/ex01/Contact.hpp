@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:43:16 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 12:44:57 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/26 12:09:37 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@
 
 class Contact{
 public:
-	// Contact();
-//getter
+//getters
 	std::string getfirstname() const;
 	std::string getlastname() const;
 	std::string getnickname() const;
 	std::string getdarkestsecret() const;
 	std::string getnumber() const;
-//setter
+//setters
 	void setfirstname(std::string firstname);
 	void setlastname(std::string lastname);
 	void setnickname(std::string nickname);

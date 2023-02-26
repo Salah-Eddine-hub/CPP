@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:09:09 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 23:47:55 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/26 12:13:41 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void PhoneBook::contact_search(){
 		}
 	}
 	std::cout << "Enter a valid number: ";
-	if(!getline(std::cin,choice))
+	if(!std::getline(std::cin,choice))
 		return ;
 	if ((choice > "7" || choice < "0")){
 		std::cout << "not valid choice." << std::endl;
@@ -86,34 +86,29 @@ void PhoneBook::add_contact(){
 	std::string input;
 	
 	std::cout << ">> Enter the first name: ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	if (!std::getline(std::cin, input))
 		return ;
 	contact.setfirstname(input);
 	
 	std::cout << ">> Enter the last name: ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	if (!std::getline(std::cin, input))
 		return ;
 	contact.setlastname(input);
 	
 	std::cout << ">> Enter the nickname: ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	if (!std::getline(std::cin, input))
 		return ;
 	contact.setnickname(input);
 	
 	std::cout << ">> Enter the darkest secret: ";
-	std::getline(std::cin, input);
-	if (std::cin.eof()) {
+	if (!std::getline(std::cin, input))
 		return ;
-	}
 	contact.setdarkestsecret(input);
 	
 	std::cout << ">> Enter the phone number: ";
-	std::getline(std::cin, input);
-	if (std::cin.eof())
+	if (!std::getline(std::cin, input))
 		return ;
+
 	contact.setnumber(input);
 	if (contact.getnumber().empty() || contact.getfirstname().empty() || contact.getlastname().empty()
 		|| contact.getdarkestsecret().empty() || contact.getnickname().empty()){

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:09:09 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 19:26:22 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/02/23 23:47:55 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void PhoneBook::contact_search(){
 		std::cout << "not valid choice." << std::endl;
 		return ;
 	}
-	std::cout <<"hwllo world" << std::endl;
 	convert << choice;
 	convert >> index;
 	if (index >= this->n){

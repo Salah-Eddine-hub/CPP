@@ -5,35 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 15:29:22 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/23 22:04:56 by sharrach         ###   ########.fr       */
+/*   Created: 2023/02/23 23:51:26 by sharrach          #+#    #+#             */
+/*   Updated: 2023/02/25 14:33:16 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 
-int main(int ac, char **av)
-{
-	PhoneBook	phonelist;
-	std::string	input;
-	
-	(void)av;
-	if (ac != 1){
-		std::cerr << "Error: not valid state"<< std::endl;
-		return 0;
-	}
-	std::cout << "           *****PhoneBook*****" << std::endl;
-	while(input != "EXIT"){
-		std::cout << ">>"; 
-		
-		if (!getline(std::cin, input))
-			break;
-		if (input == "ADD"){
-			phonelist.add_contact();
-		}
-		else if (input == "SEARCH"){
-			phonelist.contact_search();
-		}
-	}
+int main(){
+	Zombie *zombie;
+	zombie = newZombie("foo");
+	zombie.announce();
+	zombie.randomChump("foo");
+	delete zombie;
 	return 0;
 }

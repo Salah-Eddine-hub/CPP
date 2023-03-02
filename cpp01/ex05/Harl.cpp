@@ -6,8 +6,12 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:32:40 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/01 17:32:47 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/02 10:26:39 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+void Harl::Harl(std::string level){
+	
+}

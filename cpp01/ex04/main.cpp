@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:29 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/02 09:35:49 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/04 12:39:03 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@
 
 int main(int ac, char *av[]){
 	std::string s1, s2, filename;
-	std::string *buffer;
+	std::string buffer;
 	size_t len;
 	if (ac != 4){
 		std::cerr << "invalid format" << std::endl;
 	}
 	s1 = av[2];
+	s2 = av[3];
 	std::ifstream infile(av[1]);
-	std::cout << "chose a name to the filename: ";
-	std::cin >> filename;
-	std::ofstream outfile(filename);
+	if (!infile){
+		std::cout << "cannot create infile" << std::endl;
+	}
+	std::ofstream outfile(filename + "replace");
 	if (!outfile){
 		std::cerr << "Error: faild to create file" << filename << std::endl;
 		return 1;
@@ -37,6 +39,12 @@ int main(int ac, char *av[]){
 			buffer << line << std::endl;
 		}
 		len = s1.lenght();
+		while(s1 == std::find(buffer.begin(), buffer.end(), len) && buffer){
+			buffer.erase();
+			buffer << s2;
+			outfile << buffer;
+			len +=len;
+		}
 	}
 	else{
 		std::cerr << "Error: cannot create file " << av[1] << std::endl;

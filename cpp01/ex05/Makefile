@@ -6,11 +6,11 @@
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/01 17:28:38 by sharrach          #+#    #+#              #
-#    Updated: 2023/03/01 17:29:28 by sharrach         ###   ########.fr        #
+#    Updated: 2023/03/04 11:50:18 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = adresses
+NAME = Harl
 
 HEADER =	Harl.hpp
 

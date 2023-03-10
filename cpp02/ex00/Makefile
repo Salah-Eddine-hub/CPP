@@ -5,27 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/01 14:22:15 by sharrach          #+#    #+#              #
-#    Updated: 2023/03/01 15:13:01 by sharrach         ###   ########.fr        #
+#    Created: 2023/03/09 14:48:11 by sharrach          #+#    #+#              #
+#    Updated: 2023/03/09 14:48:59 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = adresses
+NAME = Fixed
 
-SRCS =	main.cpp
+HEADER =	Fixed.hpp
+
+SRCS =	main.cpp\
+		Fixed.cpp
 
 CC =	c++
 
-CPPFLAGS =	-Wall -Weasdftra -Werror -std=c++98
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 OBJS =	$(SRCS:.cpp=.o)
 
 RM	= rm -f
 
-%.o: %.cpp
+%.o: %.cpp $(HEADER)
 			$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME) :	$(OBJS)
+$(NAME) :	$(OBJS) $(HEADER)
 			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 all		:	$(NAME)

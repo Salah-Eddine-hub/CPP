@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:29 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/04 15:57:19 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:23:38 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(int ac, char *av[]){
 	std::string s1, s2, filename;
 	std::string buffer;
 	size_t len;
+
 	s1 = av[2];
 	s2 = av[3];
 	if (ac != 4 || s1.empty()){

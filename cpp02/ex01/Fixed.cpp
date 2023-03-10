@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:32:48 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/09 17:44:41 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:47:54 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,31 @@ Fixed::Fixed() {
 	this->fp_v = 0;
 }
 
-Fixed::Fixed(Fixed &cp){
-	this->fp_v = cp.fp_v;
+Fixed::Fixed(const Fixed& other){
 	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
+}
+
+Fixed::Fixed(const int convert){
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float num){
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed & Fixed::operator=(const Fixed& other) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->fp_v = other.getRawBits();
 	return *this;
+}
+
+float Fixed::toFloat(void) const {
+	return (static_cast<float>(this->fp_v));
+}
+
+int Fixed::toInt(void) const {
+	return (static_cast<int>(this->fp_v));
 }
 
 void Fixed::setRawBits(int const raw){

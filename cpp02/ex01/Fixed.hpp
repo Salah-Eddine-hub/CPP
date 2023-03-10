@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:31:35 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/09 17:45:59 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:01:31 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Fixed{
 public:
 	Fixed();
-	Fixed(Fixed &cp);
+	Fixed(const Fixed& other);
 	Fixed(const int convert);
 	Fixed(const float num);
 	Fixed & operator=(const Fixed& other);

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:49:20 by sharrach          #+#    #+#             */
-/*   Updated: 2023/02/26 13:50:30 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:23:17 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ std::string Zombie::getname(){
 }
 
 Zombie::~Zombie(){
-	std::cout << "I am deconstractor " << this->name <<std::endl;
+	std::cout << "I am deconstractor " << "|" << this->name << "|" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:29 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/09 13:23:38 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:28:13 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,7 @@ int main(int ac, char *av[]){
 		return 1;
 	}
 	if (infile.is_open()){
-		// std::string line;
 		std::getline(infile, buffer, '\0');
-		// while(std::getline(infile, line, '\0')){
-			// buffer += line + "\n";
-		// }
-		// std::cout << buffer;
 		len = s1.length();
 		int i  = 0;
 		while(buffer[i]){

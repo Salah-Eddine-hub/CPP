@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:48:58 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/10 20:32:11 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:22:36 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int main(){
 	Zombie	*zombie;
-	zombie = zombieHorde(5, "moria");
+	int		size;
+
+	size = 10;
+	if (size < 0)
+		return (1);
+	zombie = zombieHorde(size, "moria");
 	delete[] zombie;
 	return 0;
 }

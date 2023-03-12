@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:31:35 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/10 15:01:31 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:06:05 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FIXED_HPP
 
 #include <iostream>
-
+//<=> that mean the spaceship operator
 class Fixed{
 public:
 	Fixed();

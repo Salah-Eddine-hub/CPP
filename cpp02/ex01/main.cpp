@@ -6,11 +6,11 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:30:30 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/09 17:31:26 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/12 14:21:01 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixe.hpp"
+#include "Fixed.hpp"
 
 int main( void ) {
 	Fixed a;

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:29 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/11 17:28:13 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:30:59 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ int main(int ac, char *av[]){
 	size_t len;
 
 	s1 = av[2];
-	s2 = av[3];
 	if (ac != 4 || s1.empty()){
 		std::cerr << "invalid format" << std::endl;
 		return (1);
 	}
+	s2 = av[3];
 	std::ifstream infile(av[1]);
 	if (!infile){
 		std::cout << "cannot create infile" << std::endl;
+		return 1;
 	}
 	filename = av[1];
 	std::ofstream outfile(filename + ".replace");

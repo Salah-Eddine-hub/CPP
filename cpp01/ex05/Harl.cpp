@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:32:40 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/11 18:08:57 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:26:37 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void Harl::error(){
 	std::cout << ERROR << std::endl;
 }
 
-//implementation of pointer to member fonction
+
 void Harl::complain(std::string level) {
 	std::string lvl[4] = {"debug","info","warning","error"};
 

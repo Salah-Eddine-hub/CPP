@@ -5,17 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 17:32:49 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/12 11:25:35 by sharrach         ###   ########.fr       */
+/*   Created: 2023/03/13 16:25:02 by sharrach          #+#    #+#             */
+/*   Updated: 2023/03/13 16:26:24 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int main(){
-	Harl out;
-	out.complain("error");
-	out.complain("debug");
-	out.complain("warning");
-	out.complain("info");
+int main( void ) {
+Fixed a;
+Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+std::cout << a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+std::cout << b << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;
+return 0;
 }

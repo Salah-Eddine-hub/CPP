@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:25:17 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/14 14:12:38 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:43:11 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,3 @@ private:
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif
-
-10101001101011

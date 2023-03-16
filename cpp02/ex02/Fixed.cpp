@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:25:58 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/14 12:40:04 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:34:45 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,34 @@ Fixed & Fixed::operator=(const Fixed& other) {
 	return *this;
 }
 
+Fixed & Fixed::operator-(const Fixed& other) {
+	return ();
+}
+
+bool Fixed::operator==(const Fixed &other){
+	return (fp_v == other.fp_v);
+}
+
+bool Fixed::operator>(const Fixed &other) {
+	return (fp_v > other.fp_v);
+}
+
+bool Fixed::operator>=(const Fixed& other) {
+	return (fp_v >= other.fp_v);
+}
+
+bool Fixed::operator<(const Fixed& other) {
+	return (fp_v < other.fp_v);
+}
+
+bool Fixed::operator<=(const Fixed& other) {
+	return (fp_v <= other.fp_v);
+}
+
+bool Fixed::operator!=(const Fixed& other) {
+	return !(fp_v == other.fp_v);
+}
+
 float Fixed::toFloat(void) const {
 	return ((float) this->fp_v / 256);
 }
@@ -59,7 +87,7 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& obj){
-	os << obj.toFloat();
-	return os;
+std::ostream& operator<<(std::ostream& ostream, const Fixed& fixed){
+	ostream << fixed.toFloat();
+	return ostream;
 }

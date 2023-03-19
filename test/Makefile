@@ -1,8 +1,8 @@
 NAME = aout
 
-HEADER = test.hpp\
+HEADER = shape.hpp\
 
-SRCS =	test.cpp\
+SRCS =	shape.cpp\
 		main.cpp
 
 CC =	c++

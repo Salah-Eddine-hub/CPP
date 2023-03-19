@@ -1,10 +1,11 @@
-#include "test.hpp"
+#include "shape.hpp"
 
 int main(){
-	Point first{10, 20};
-	Point second{10, 21};
-	Point third = first + second;
-	std::cout << (first == second) << std::endl;
-	std::cout << third;
+	Rectangle a;
+	Circle O;
+	a.setbackground("blue");
+	O.setbackground("yellow");
+	std::cout << O.getbackground() << std::endl;
+	std::cout << a.getbackground() << std::endl;
 	return 0;
 }

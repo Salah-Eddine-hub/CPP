@@ -6,14 +6,16 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 12:39:04 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/19 18:54:58 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:22:02 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-		: Hit_points(100), Energy_points(50), Attack_damage(20) {
+ScavTrap::ScavTrap() {
+	Hit_points = 100;
+	Energy_points = 50;
+	Attack_damage = 20;
 	std::cout << "ScavTrap default constuctor" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 17:45:15 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/19 18:56:06 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:06:24 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 ClapTrap::ClapTrap()
 		: Hit_points(10), Energy_points(10), Attack_damage(0) {
-	std::cout << "ClapTrap default constructor hh" << std::endl;
+	std::cout << "ClapTrap default constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 		: Name(name), Hit_points(10), Energy_points(10), Attack_damage(0) {
-	std::cout << "ClapTrap constructor haha" << std::endl;
+	std::cout << "ClapTrap constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hitpoint, int energy, int attack) : 
 	Name(name), Hit_points(hitpoint), Energy_points(energy), Attack_damage(attack) {
-	std::cout << "ClapTrap constructor222 haha" << std::endl;
+	std::cout << "ClapTrap constructor2" << std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap& other) {
-	std::cout << "ClapTrap copy constructor yea" << std::endl;
+	std::cout << "ClapTrap copy constructor" << std::endl;
 	this->Name = other.Name;
 	this->Hit_points = other.Hit_points;
 	this->Energy_points = other.Energy_points;
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(const ClapTrap& other) {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
-	std::cout << "ClapTrap assignement operator hihi" << std::endl;
+	std::cout << "ClapTrap assignement operator" << std::endl;
 	this->Name = other.Name;
 	this->Hit_points = other.Hit_points;
 	this->Energy_points = other.Energy_points;
@@ -44,7 +44,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap destructor hehe" << std::endl;
+	std::cout << "ClapTrap destructor" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) {

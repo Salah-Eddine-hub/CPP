@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 17:46:02 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/20 16:12:13 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/20 18:10:34 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int main(void) {
 	FragTrap tap;
+	ScavTrap dap;
 
 	tap.highFivesGuys();
 	tap.attack("me");
 	tap.takeDamage(3);
+	dap.attack("me");
 	tap.beRepaired(2);
 	
 	return 0;

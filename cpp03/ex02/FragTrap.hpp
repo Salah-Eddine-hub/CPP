@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 17:47:23 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/19 18:06:16 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/20 18:10:17 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 class FragTrap : public ClapTrap{
 public:

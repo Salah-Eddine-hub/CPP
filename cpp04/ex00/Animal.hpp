@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:18:42 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/21 18:37:36 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/24 08:46:02 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ public:
 	Animal(const Animal& other);
 	Animal& operator=(const Animal& copy);
 	~Animal();
-	void setType(std::string type);
-	std::string getType();
+	virtual void makeSound() const;
+	virtual void setType(std::string type);
+	virtual std::string getType() const;
 protected:
 	std::string type;
-private:
 };
 #endif

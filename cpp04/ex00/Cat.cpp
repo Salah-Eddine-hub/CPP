@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:39:27 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/21 18:36:13 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/24 08:50:48 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 Cat::Cat() {
 	std::cout << "Cat default constructor" << std::endl;
+	type = "Cat";
 }
 
 Cat::Cat(const Cat& other) {
 	std::cout << "Cat copy constructor" << std::endl;
+	this->type = other.type;
 }
 
 Cat& Cat::operator=(const Cat& copy){
-	std::cout << "Cat cop assignement operator" << std::endl;
+	std::cout << "Cat copy assignement operator" << std::endl;
+	this->type = copy.type;
+	return *this;
+}
+
+Cat::~Cat() {
+	std::cout << "Cat destructor" << std::endl;
 }
 
 void Cat::setType(std::string type) {
 	this->type = type;
 }
 
-std::string Cat::getType() {
+std::string Cat::getType() const{
 	return type;
 }
 
-void Cat::makeSound() {
-	std::cout << "Meeeeeow" << std::endl;
+void Cat::makeSound() const {
+	std::cout << "Meow meow" << std::endl;
 }

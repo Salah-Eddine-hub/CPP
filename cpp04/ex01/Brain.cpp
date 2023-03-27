@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:32:00 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/25 11:19:33 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/27 21:59:44 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ Brain::~Brain() {
 
 Brain& Brain::operator=(const Brain& copy) {
 	std::cout << "copy assignement operator" << std::endl;
-	*this = copy;
+	for (int i = 0; i < 100; i++){
+		this->ideas[i] = copy.ideas[i];
+	}
 	return *this;
 }

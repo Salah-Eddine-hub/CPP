@@ -6,7 +6,12 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 11:34:45 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/25 11:34:46 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/27 19:21:50 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
+
+int main(void) {
+	std::cout << "shof shno dir hnaya hh" << std::endl;
+}

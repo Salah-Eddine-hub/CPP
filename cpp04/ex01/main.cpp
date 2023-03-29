@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:30:45 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/27 22:43:11 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/27 23:07:55 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@ int main(void){
 	Animal* obj[10];
 
 	for (int y = 0; y < 5; y++) {
-		std::cout << obj[y]->getType() << std::endl;
+		obj[y] = new Dog;
 	}
-	for (int s = 0; s < 5; s++) {
-		delete obj[s];
+	for (int s = 5; s < 10; s++) {
+		obj[s] = new Cat;
+	}
+	
+	for (int i = 0; i < 10; i++) {
+		std::cout << obj[i]->getType() << std::endl;
+		// std::cout << obj[i]->makeSound() << std::endl;
 	}
 	delete j;//should not create a leak
 	delete i;

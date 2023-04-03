@@ -5,25 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/21 12:52:27 by sharrach          #+#    #+#              #
-#    Updated: 2023/04/03 08:47:25 by sharrach         ###   ########.fr        #
+#    Created: 2023/04/03 14:29:22 by sharrach          #+#    #+#              #
+#    Updated: 2023/04/03 14:30:05 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = Bureaucrat
 
-HEADER =	Animal.hpp\
-			Cat.hpp\
-			Dog.hpp\
-			WrongAnimal.hpp\
-			WrongCat.hpp
+HEADER =	Bureaucrat.hpp\
 
 SRCS =	main.cpp\
-		Animal.cpp\
-		Cat.cpp\
-		Dog.cpp\
-		WrongAnimal.cpp\
-		WrongCat.cpp
+		Bureaucrat.cpp
 
 CC =	c++
 

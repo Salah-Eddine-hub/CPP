@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 11:31:56 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/25 11:32:10 by sharrach         ###   ########.fr       */
+/*   Created: 2023/03/25 10:27:23 by sharrach          #+#    #+#             */
+/*   Updated: 2023/03/25 10:27:44 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ void Animal::setType(std::string type) {
 std::string Animal::getType() const {
 	return type;
 }
-

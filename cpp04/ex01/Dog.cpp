@@ -6,16 +6,16 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:28:35 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/27 22:21:02 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:39:22 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() {
-	std::cout << "Dog default constructor" << std::endl;
 	type = "Dog";
 	brain = new Brain;
+	std::cout << "Dog default constructor" << std::endl;
 }
 
 Dog::Dog(const Dog& other) {

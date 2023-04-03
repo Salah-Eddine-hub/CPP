@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 11:32:16 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/25 11:32:19 by sharrach         ###   ########.fr       */
+/*   Created: 2023/03/25 10:27:55 by sharrach          #+#    #+#             */
+/*   Updated: 2023/04/03 08:38:13 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Animal(const Animal& other);
 	Animal& operator=(const Animal& copy);
 	virtual ~Animal();
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	virtual void setType(std::string type);
 	virtual std::string getType() const;
 protected:

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 10:28:12 by sharrach          #+#    #+#             */
-/*   Updated: 2023/03/27 22:18:53 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/03/29 22:10:25 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat() {
 	brain = new Brain;
 }
 
-Cat::Cat(const Cat& other) {
+Cat::Cat(const Cat& other) : Animal(other){
 	std::cout << "Cat copy constructor" << std::endl;
 	this->type = other.type;
 	delete this->brain;

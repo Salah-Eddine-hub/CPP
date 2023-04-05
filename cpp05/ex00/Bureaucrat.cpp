@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:02:50 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/04 11:30:59 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/05 05:41:28 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int Bureaucrat::Decrement() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {
-	os << obj.Getname() << ", bureaucrat grade" << obj.Getgrade() << "." << std::endl;
+	os << obj.Getname() << ", bureaucrat grade " << obj.Getgrade() << "." << std::endl;
 	return os;
 }

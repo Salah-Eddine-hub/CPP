@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 15:02:50 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/06 06:56:59 by sharrach         ###   ########.fr       */
+/*   Created: 2023/04/06 08:57:06 by sharrach          #+#    #+#             */
+/*   Updated: 2023/04/06 09:00:58 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() {
 	std::cout << "Bureaucrat default constructor" << std::endl;
@@ -69,7 +69,7 @@ int Bureaucrat::Decrement() {
 	return this->grade++;
 }
 
-void Bureaucrat::signForm(Form obj) {
+void Bureaucrat::signAForm(AForm obj) {
 	if (obj.getSign() == 1)
 		std::cout << *this << " signed " << obj << std::endl;
 	else if (obj.getSign() == 0)

@@ -20,14 +20,14 @@
 class Form;
 
 class GradeTooLowException : public std::exception{
-	const char* what() const throw(){
-		return "too low";
+	virtual const char* what() const throw(){
+		return "Bureaucrat grade too low";
 	}
 };
 
 class GradeTooHighException : public std::exception{
-	const char* what() const throw(){
-		return "too high";
+	virtual const char* what() const throw(){
+		return "Bureaucrat grade too high";
 	}
 };
 
@@ -38,17 +38,15 @@ public:
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat& operator=(const Bureaucrat& copy);
 	~Bureaucrat();
-	void Setgrade(int grade);
-	std::string const Getname() const;
-	int Getgrade() const;
-	int Increment();
-	int Decrement();
+	std::string const getName() const;
+	int	getGrade() const;
+	void increment();
+	void decrement();
 	void signForm(Form obj);
 private:
 	const std::string name;
 	int grade;
-	GradeTooLowException low;
-	GradeTooHighException high;
 };
+
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 #endif

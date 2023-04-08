@@ -36,7 +36,7 @@ public:
 	void beSigned(Bureaucrat obj);
 private:
 	const std::string name;
-	bool sign;
+	bool isSigned;
 	const int grade_s;
 	const int grade_ex;
 	class GradeTooLowExeption : public std::exception {

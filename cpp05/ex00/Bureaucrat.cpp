@@ -23,16 +23,15 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name), grade(gr
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other) {
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name) {
 	std::cout << "Bureaucrat copy constructor" << std::endl;
-	// this->name = other.name;
 	this->grade = other.grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy) {
 	std::cout << "Bureaucrat copy assignment operator" << std::endl;
-	// this->name = copy.name;
-	this->grade = copy.grade;
+	this->~Bureaucrat();
+	new (this) Bureaucrat(copy.name, copy.grade);
 	return *this;
 }
 
@@ -40,38 +39,27 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "Bureaucrat destructor" << std::endl;
 }
 
-// const char* high::what() const throw() {
-// 	return "too high";
-// }
-
-// const char* low::what() const throw() {
-// 	return "too low";
-// }
-
-// void Bureaucrat::Setname(std::string name) {
-// 	this->name = name;
-// }
-
-// void Bureaucrat::Setgrade(int grade) {
-// 	this->grade = grade;
-// }
-std::string const Bureaucrat::Getname() const{
+std::string const Bureaucrat::getName() const{
 	return this->name;
 }
 
-int Bureaucrat::Getgrade() const{
+int Bureaucrat::getGrade() const{
 	return this->grade;
 }
 
-int Bureaucrat::Increment() {
-	return this->grade--;
+void Bureaucrat::increment() {
+	if (this->grade - 1 < 1)
+		throw GradeTooHighException();
+	this->grade--;
 }
 
-int Bureaucrat::Decrement() {
-	return this->grade++;
+void Bureaucrat::decrement() {
+	if (this->grade + 1 > 150)
+		throw GradeTooLowException();
+	this->grade++;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {
-	os << obj.Getname() << ", bureaucrat grade " << obj.Getgrade() << "." << std::endl;
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
 	return os;
 }

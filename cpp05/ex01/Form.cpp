@@ -12,7 +12,7 @@
 
 #include "Form.hpp"
 
-Form::Form() :  grade_s(0), grade_ex(0){
+Form::Form() : isSigned(false), grade_s(0), grade_ex(0){
 	std::cout << "Form default constructor" << std::endl;
 }
 
@@ -21,7 +21,7 @@ Form::~Form() {
 }
 
 Form::Form(std::string name, int grade_s, int grade_ex)
-			: name(name), grade_s(grade_s), grade_ex(grade_ex) {
+			: name(name), isSigned(false), grade_s(grade_s), grade_ex(grade_ex) {
 	if (grade_s < 1)
 		throw GradeTooHighException();
 	if (grade_s > 150) 

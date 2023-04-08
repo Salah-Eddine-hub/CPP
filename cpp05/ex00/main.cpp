@@ -15,9 +15,15 @@
 int main() {
 	try{
 		Bureaucrat bir("tano", 120);
+		Bureaucrat bir2("bano", 20);
+		Bureaucrat bir3("lano", 160);
+
+		bir2 = bir;
+
 		std::cout << bir << std::endl;
+		std::cout << bir2 << std::endl;
 	}
 	catch (std::exception& ex) {
-		std::cout << "bir" << ex.what();
+		std::cout << ex.what() << std::endl;
 	}
 }

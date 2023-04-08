@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:02:50 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/06 06:56:59 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/08 20:07:23 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,13 @@ void Bureaucrat::decrement() {
 }
 
 void Bureaucrat::signForm(Form obj) {
-	if (obj.getSign() == 1)
-		std::cout << *this << " signed " << obj << std::endl;
-	else if (obj.getSign() == 0)
-		std::cout << this->name << " couldn't sign " << obj << " because already signed" << std::endl; 
+	if (obj.getSign()) {
+		std::cout << this->name << " couldn't sign " << obj.getName() << " because already signed." << std::endl; 
+	}
+	else {
+		obj.setSign(true);
+		std::cout << this->name << " signed " << obj.getName() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {

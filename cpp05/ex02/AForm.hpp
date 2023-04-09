@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 07:15:25 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/06 08:54:12 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:21:13 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AForm {
 public:
 	AForm();
 	~AForm();
-	AForm(std::string name, int grad_s, int grade_ex);
+	AForm(std::string name, int grade_s, int grade_ex);
 	AForm(const AForm& other);
 	AForm& operator=(const AForm& copy);
 
@@ -36,7 +36,7 @@ public:
 	void beSigned(Bureaucrat obj);
 private:
 	const std::string name;
-	bool sign;
+	bool isSigned;
 	const int grade_s;
 	const int grade_ex;
 	class GradeTooLowExeption : public std::exception {

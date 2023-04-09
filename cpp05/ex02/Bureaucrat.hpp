@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:54:20 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/06 09:01:05 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:23:06 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,15 @@ public:
 	Bureaucrat(const Bureaucrat& other);
 	Bureaucrat& operator=(const Bureaucrat& copy);
 	~Bureaucrat();
-	void Setgrade(int grade);
-	std::string const Getname() const;
-	int Getgrade() const;
-	int Increment();
-	int Decrement();
-	void signAForm(AForm obj);
+	void setGrade(int grade);
+	std::string const getName() const;
+	int	getGrade() const;
+	void increment();
+	void decrement();
+	void signForm(AForm obj);
 private:
 	const std::string name;
 	int grade;
-	GradeTooLowException low;
-	GradeTooHighException high;
 };
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj);
 #endif

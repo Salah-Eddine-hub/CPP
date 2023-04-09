@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 05:55:30 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/08 20:09:35 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:20:42 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form {
 public:
 	Form();
 	~Form();
-	Form(std::string name, int grad_s, int grade_ex);
+	Form(std::string name, int grade_s, int grade_ex);
 	Form(const Form& other);
 	Form& operator=(const Form& copy);
 

@@ -16,7 +16,7 @@ PresidentialPardonForm::PresidentialPardonForm() {
 	std::cout << "PresidentialPardonForm  constructor" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("", 145, 137), target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("", 25, 5) {
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {

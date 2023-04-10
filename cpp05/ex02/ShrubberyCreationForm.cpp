@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 22:28:12 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/08 22:34:38 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:58:10 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) {
-	std::cout << "ShrubberyCreationForm copy constructor"
+	std::cout << "ShrubberyCreationForm copy constructor" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy) {
 	std::cout << "ShrubberyCreationForm copy assignement operator" << std::endl;
+}
+
+std::string ShrubberyCreationForm::getTarget() const {
+	return this->target;
+}
+
+ShrubberyCreationForm::execute(const Bureaucrat& execute) {
+	
 }

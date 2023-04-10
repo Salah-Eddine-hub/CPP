@@ -16,7 +16,7 @@ RobotomyRequestForm::RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm  constructor" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("", 145, 137), target(target) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("", 72, 45) {
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {

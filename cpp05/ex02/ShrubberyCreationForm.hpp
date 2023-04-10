@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 07:26:13 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/08 22:30:20 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:57:39 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
 	~ShrubberyCreationForm();
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
+	std::string getTarget() const;
+	execute(const Bureaucrat& executor);
 private:
 	std::string	target;
 };

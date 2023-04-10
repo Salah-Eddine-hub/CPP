@@ -15,9 +15,18 @@
 ShrubberyCreationForm::ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm  constructor" << std::endl;
 }
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("", 145, 137), target(target) {
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm  destructor" << std::endl;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) {
+	std::cout << "ShrubberyCreationForm copy constructor"
+}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy) {
+	std::cout << "ShrubberyCreationForm copy assignement operator" << std::endl;
 }

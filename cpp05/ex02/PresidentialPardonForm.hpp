@@ -22,6 +22,8 @@ public:
 	~PresidentialPardonForm();
 	PresidentialPardonForm(const PresidentialPardonForm& other);
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& copy);
+	std::string getTarget() const;
+	void execute(const Bureaucrat& executor);
 private:
 };
 #endif

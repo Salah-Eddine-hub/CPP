@@ -43,7 +43,8 @@ public:
 	int	getGrade() const;
 	void increment();
 	void decrement();
-	void signForm(AForm obj);
+	void signForm(AForm* obj);
+	void excecuteForm(const AForm& form);
 private:
 	const std::string name;
 	int grade;

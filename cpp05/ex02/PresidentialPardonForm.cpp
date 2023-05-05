@@ -30,3 +30,10 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& oth
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& copy) {
 	std::cout << "PresidentialPardonForm copy assignement operator" << std::endl;
 }
+
+std::string PresidentialPardonForm::getTarget() const {
+	return this->target;
+}
+void PresidentialPardonForm::execute(const Bureaucrat& executor){
+	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox." std::endl;
+}

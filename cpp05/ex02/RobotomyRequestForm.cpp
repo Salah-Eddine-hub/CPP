@@ -30,3 +30,18 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) {
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy) {
 	std::cout << "RobotomyRequestForm copy assignement operator" << std::endl;
 }
+
+std::string getTarget() const {
+	return this->target;
+}
+
+void RobotomyRequestForm::execute(const Bureaucrat& executor) {
+	srand(time(NULL));
+	switch(rand() % 2 + 1) {
+		case 1:
+			std::cout << this->getTarget() << "has been robotomized successfully" << std::endl;
+		case 2:
+			std::cout << "the robotomy failed." << std::endl;
+	}
+
+}

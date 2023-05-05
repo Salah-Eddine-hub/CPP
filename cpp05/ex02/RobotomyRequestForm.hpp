@@ -22,6 +22,8 @@ public:
 	~RobotomyRequestForm();
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& copy);
+	std::string getTarget() const;
+	void execute(const Bureaucrat& executor);
 private:
 };
 #endif

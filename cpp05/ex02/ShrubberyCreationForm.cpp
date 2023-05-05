@@ -35,6 +35,33 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return this->target;
 }
 
-ShrubberyCreationForm::execute(const Bureaucrat& execute) {
-	
+void ShrubberyCreationForm::execute(const Bureaucrat& execute) {
+	std::ofstream infile;
+
+	infile.open(this->target + "_Shrubbery");
+	if (!infile)
+		std::cerr << "the file couldn't open!!" << std::endl;
+	if (infile.is_open()){
+		infile << "                 *" << std::endl;
+		infile << "                ***" << std::endl;
+		infile << "               *****" << std::endl;
+		infile << "              *******" << std::endl;
+		infile << "             *********" << std::endl;
+		infile << "            ***********" << std::endl;
+		infile << "           *************" << std::endl;
+		infile << "          ***************" << std::endl;
+		infile << "         *****************" << std::endl;
+		infile << "        *******************" << std::endl;
+		infile << "       *********************" << std::endl;
+		infile << "      ***********************" << std::endl;
+		infile << "     *************************" << std::endl;
+		infile << "    ***************************" << std::endl;
+		infile << "   *****************************" << std::endl;
+		infile << "  *******************************" << std::endl;
+		infile << "             *********" << std::endl;
+		infile << "             *********" << std::endl;
+		infile << "             *********" << std::endl;
+	}
+
+	infile.close();
 }

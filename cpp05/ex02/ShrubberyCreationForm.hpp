@@ -14,6 +14,11 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <sstream>
+
 
 class ShrubberyCreationForm : public AForm{
 public:
@@ -23,7 +28,7 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
 	std::string getTarget() const;
-	execute(const Bureaucrat& executor);
+	void execute(const Bureaucrat& executor);
 private:
 	std::string	target;
 };

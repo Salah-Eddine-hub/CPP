@@ -64,14 +64,22 @@ void Bureaucrat::decrement() {
 	this->grade++;
 }
 
-void Bureaucrat::signForm(AForm obj) {
+void Bureaucrat::signForm(AForm* obj) {
 	if (obj.getSign()) {
-		std::cout << this->name << " couldn't sign " << obj.getName() << " because already signed." << std::endl; 
+		std::cout << this->name << " couldn't sign " << obj->getName() << " because already signed." << std::endl; 
 	}
 	else {
 		obj.setSign(true);
-		std::cout << this->name << " signed " << obj.getName() << std::endl;
+		std::cout << this->name << " signed " << obj->getName() << std::endl;
 	}
+}
+
+void Bureaucrat::excecuteForm(const AForm& form) {
+	
+	if(form.execute(*this))
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	else
+		std::cout << "the bureaucrat counldn't execute the form!! " << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {

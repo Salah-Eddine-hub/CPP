@@ -10,12 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 int main() {
 	try{
-		
+		Bureaucrat haha("hello", 110);
+		PresidentialPardonForm yes("no");
+		yes.execute(haha);
 	}
-	catch{
-		
+	catch (std::exception& ex){
+		std::cout << ex.what();
 	}
 	return 0;
 }

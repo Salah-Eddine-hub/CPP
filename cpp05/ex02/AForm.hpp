@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 07:15:25 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/10 22:58:33 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:17:19 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	int getSgrade() const;
 	
 	void beSigned(Bureaucrat obj);
-	virtual execute(Bureaucrat const & executor) = 0;
+	virtual void execute(Bureaucrat const & executor) = 0;
 private:
 	const std::string name;
 	bool isSigned;

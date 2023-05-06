@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:57:06 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/08 22:23:10 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/06 12:39:45 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ void Bureaucrat::decrement() {
 }
 
 void Bureaucrat::signForm(AForm* obj) {
-	if (obj.getSign()) {
+	if (obj->getSign()) {
 		std::cout << this->name << " couldn't sign " << obj->getName() << " because already signed." << std::endl; 
 	}
 	else {
-		obj.setSign(true);
+		obj->setSign(true);
 		std::cout << this->name << " signed " << obj->getName() << std::endl;
 	}
 }

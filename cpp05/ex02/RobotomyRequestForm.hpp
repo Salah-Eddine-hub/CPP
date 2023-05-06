@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 07:38:41 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/10 14:15:04 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/06 10:29:46 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ public:
 	std::string getTarget() const;
 	void execute(const Bureaucrat& executor);
 private:
+	std::string target;
 };
 #endif

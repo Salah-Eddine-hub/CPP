@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/05 05:55:30 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/07 17:35:06 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/06 19:58:43 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/07 17:34:57 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
-#include <cstring>
 #include <exception>
 #include "Bureaucrat.hpp"
 
-class Form {
+class AForm {
 public:
-	Form();
-	~Form();
-	Form(std::string name, int grade_s, int grade_ex);
-	Form(const Form& other);
-	Form& operator=(const Form& copy);
+	AForm();
+	~AForm();
+	AForm(std::string name, int grade_s, int grade_ex);
+	AForm(const AForm& other);
+	AForm& operator=(const AForm& copy);
 
 	void setSign(bool sign);
 
@@ -39,17 +38,20 @@ private:
 	bool isSigned;
 	const int grade_s;
 	const int grade_ex;
-	class GradeTooLowException : public std::exception {
-		const char* what() const throw() {
-			return "too low";
-		}
-	};
+
 	class GradeTooHighException : public std::exception {
 		const char* what() const throw() {
 			return "too high";
 		}
 	};
+
+	class GradeTooLowException : public std::exception {
+		const char* what() const throw() {
+			return "too low";
+		}
+	};
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& obj);
+std::ostream& operator<<(std::ostream& os, const AForm& obj);
+
 #endif

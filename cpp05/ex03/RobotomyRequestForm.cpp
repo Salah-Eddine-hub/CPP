@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:13:17 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 17:55:05 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:34:49 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ std::string RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
-	if (executor.getGrade() < 72 && executor.getGrade() < 45)
+	if (executor.getGrade() <= 72 && executor.getGrade() <= 45)
 	{
 		srand(time(NULL));
 		int random = 1 + (rand() % 2);

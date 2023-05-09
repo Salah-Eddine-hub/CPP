@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 15:02:26 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 17:52:46 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:32:55 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void) {
 	try{
@@ -24,7 +25,10 @@ int main(void) {
 		A1.executeForm(A3);
 		RobotomyRequestForm A4("A44");
 		PresidentialPardonForm A5("A55");
+		AForm* Atest;
+		Intern A6;
 
+		Atest = A6.makeForm("Presidentidal Pardon", "bnech");
 		A3.execute(A1);
 		A4.execute(A1);
 		A5.execute(A1);

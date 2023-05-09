@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 05:56:24 by sharrach          #+#    #+#             */
-/*   Updated: 2023/04/08 20:14:35 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:19:04 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,14 @@ int Form::getEXgrade() const {
 
 int Form::getSgrade() const {
 	return (this->grade_s);
+}
+
+const char* Form::GradeTooHighException::what() const throw() {
+	return "Too High";
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return "Too Low";
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& obj) {

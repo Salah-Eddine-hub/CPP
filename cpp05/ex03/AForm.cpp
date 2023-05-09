@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:58:45 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 14:32:43 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:41:25 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,6 @@ AForm::AForm(std::string name, int grade_s, int grade_ex) : name(name), grade_s(
 AForm::AForm(const AForm& other) : name(other.name), isSigned(other.isSigned), grade_s(other.grade_s), grade_ex(other.grade_ex){
 	std::cout << "AForm copy constructor" << std::endl;
 }
-
-// AForm& AForm::operator=(const AForm& copy) {
-// 	std::cout << "AForm copy assignment operator" << std::endl;
-// 	this->~AForm();
-// 	new (this) AForm(copy.name, copy.grade_s, copy.grade_ex);
-// 	this->isSigned = copy.isSigned;
-// 	return (*this);
-// }
 
 void AForm::setSign(bool sign) {
 	this->isSigned = sign;

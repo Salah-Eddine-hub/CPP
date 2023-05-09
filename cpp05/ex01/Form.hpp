@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
@@ -40,14 +40,10 @@ private:
 	const int grade_s;
 	const int grade_ex;
 	class GradeTooLowException : public std::exception {
-		const char* what() const throw() {
-			return "too low";
-		}
+		const char* what() const throw();
 	};
 	class GradeTooHighException : public std::exception {
-		const char* what() const throw() {
-			return "too high";
-		}
+		const char* what() const throw();
 	};
 };
 

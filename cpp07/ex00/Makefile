@@ -1,29 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/06 19:58:08 by sharrach          #+#    #+#              #
-#    Updated: 2023/05/06 19:58:31 by sharrach         ###   ########.fr        #
+#    Created: 2023/05/13 11:02:56 by sharrach          #+#    #+#              #
+#    Updated: 2023/05/13 11:03:14 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AForm
+NAME = whatever
 
-HEADER =	Bureaucrat.hpp\
-			AForm.hpp\
-			ShrubberyCreationForm.hpp\
-			RobotomyRequestForm.hpp\
-			PresidentialPardonForm.hpp
+HEADER =	whatever.hpp
 
 SRCS =	main.cpp\
-		Bureaucrat.cpp\
-		AForm.cpp\
-		ShrubberyCreationForm.cpp\
-		RobotomyRequestForm.cpp\
-		PresidentialPardonForm.cpp
+		whatever.cpp
 
 CC =	c++
 

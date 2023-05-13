@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:58:49 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 14:46:57 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:43:26 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm() {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("", 25, 5), target(target) {
+	std::cout << "I' am here" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
@@ -32,6 +33,10 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	std::cout << "PresidentialPardonForm copy assignement operator" << std::endl;
 	this->target = copy.target;
 	return (*this);
+}
+
+std::string PresidentialPardonForm::getTarget() const {
+	return this->target;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const& executor) const{

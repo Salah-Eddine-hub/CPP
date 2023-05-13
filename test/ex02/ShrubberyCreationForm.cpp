@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:41:16 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 14:45:52 by sharrach         ###   ########.fr       */
+/*   Created: 2023/04/08 22:28:12 by sharrach          #+#    #+#             */
+/*   Updated: 2023/04/10 22:58:10 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,25 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm  destructor" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : target(other.target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) {
 	std::cout << "ShrubberyCreationForm copy constructor" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& copy) {
 	std::cout << "ShrubberyCreationForm copy assignement operator" << std::endl;
-	target = copy.target;
-	return (*this);
 }
 
 std::string ShrubberyCreationForm::getTarget() const {
 	return this->target;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+void ShrubberyCreationForm::execute(const Bureaucrat& execute) {
 	std::ofstream infile;
 
+	infile.open(this->target + "_Shrubbery");
 	if (!infile)
 		std::cerr << "the file couldn't open!!" << std::endl;
-	if (executor.getGrade() < 137 && executor.getGrade() < 145){
-		infile.open(this->getTarget() + "_Shrubbery");
+	if (infile.is_open()){
 		infile << "                 *" << std::endl;
 		infile << "                ***" << std::endl;
 		infile << "               *****" << std::endl;
@@ -64,7 +62,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		infile << "             *********" << std::endl;
 		infile << "             *********" << std::endl;
 	}
-	else
-		throw GradeTooLowException();
+
 	infile.close();
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 07:38:41 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/06 10:29:46 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/08 11:13:15 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/08 14:07:46 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include <iostream>
 
-class RobotomyRequestForm : public AForm{
+class RobotomyRequestForm : public AForm {
 public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(std::string target);
@@ -23,8 +25,9 @@ public:
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& copy);
 	std::string getTarget() const;
-	void execute(const Bureaucrat& executor);
+	void execute(Bureaucrat const& executor) const;
 private:
 	std::string target;
 };
+
 #endif

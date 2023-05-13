@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 15:02:26 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/09 15:32:55 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:39:20 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main(void) {
 	try{
-		Bureaucrat A1("ab", 5);
+		Bureaucrat A1("ab", 136);
 		Bureaucrat A11;
 		ShrubberyCreationForm A3("A22");
 		A1.executeForm(A3);
@@ -28,7 +28,7 @@ int main(void) {
 		AForm* Atest;
 		Intern A6;
 
-		Atest = A6.makeForm("Presidentidal Pardon", "bnech");
+		Atest = A6.makeForm("Shrubbery Creation", "bnech");
 		A3.execute(A1);
 		A4.execute(A1);
 		A5.execute(A1);

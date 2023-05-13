@@ -1,29 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/06 19:58:08 by sharrach          #+#    #+#              #
-#    Updated: 2023/05/06 19:58:31 by sharrach         ###   ########.fr        #
+#    Created: 2023/05/11 13:46:08 by sharrach          #+#    #+#              #
+#    Updated: 2023/05/13 11:02:45 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AForm
+NAME = Conversion
 
-HEADER =	Bureaucrat.hpp\
-			AForm.hpp\
-			ShrubberyCreationForm.hpp\
-			RobotomyRequestForm.hpp\
-			PresidentialPardonForm.hpp
+HEADER =	ScalarConverter.hpp
 
 SRCS =	main.cpp\
-		Bureaucrat.cpp\
-		AForm.cpp\
-		ShrubberyCreationForm.cpp\
-		RobotomyRequestForm.cpp\
-		PresidentialPardonForm.cpp
+		ScalarConverter.cpp
 
 CC =	c++
 

@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 08:57:06 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/06 12:39:45 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/06 19:58:40 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/08 17:51:42 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat() {
+Bureaucrat::Bureaucrat() : name ("Bureaucrat"), grade(6){
 	std::cout << "Bureaucrat default constructor" << std::endl;
 }
 
@@ -35,17 +35,16 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy) {
 	new (this) Bureaucrat(copy.name, copy.grade);
 	return *this;
 }
-
 Bureaucrat::~Bureaucrat() {
 	std::cout << "Bureaucrat destructor" << std::endl;
 }
 
-void Bureaucrat::setGrade(int grade) {
-	this->grade = grade;
-}
-
 std::string const Bureaucrat::getName() const{
 	return this->name;
+}
+
+void Bureaucrat::setGrade(int grade) {
+	this->grade = grade;
 }
 
 int Bureaucrat::getGrade() const{
@@ -74,12 +73,13 @@ void Bureaucrat::signForm(AForm* obj) {
 	}
 }
 
-void Bureaucrat::excecuteForm(const AForm& form) {
-	
-	if(form.execute(*this))
+void Bureaucrat::executeForm(AForm const& form) {
+	if (this->getGrade() < form.getEXgrade()){
+		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
 	else
-		std::cout << "the bureaucrat counldn't execute the form!! " << std::endl;
+		throw GradeTooHighException();
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {

@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 15:06:39 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/11 12:00:11 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/13 11:03:25 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/13 11:11:13 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-int main() {
-	try{
-		Bureaucrat bir("tano", 120);
-		Bureaucrat bir2("bano", 20);
-		Bureaucrat bir3("lano", 160);
+#include<iostream>
 
-		bir2 = bir;
-
-		std::cout << bir << std::endl;
-		std::cout << bir2 << std::endl;
-	}
-	catch (std::exception& ex) {
-		std::cout << ex.what() << std::endl;
-	}
+template <typename T>
+inline T const& Max (T const& a, T const& b) { 
+   return a < b ? b:a; 
 }
+
+#endif

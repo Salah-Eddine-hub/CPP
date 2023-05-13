@@ -5,35 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 15:02:26 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 17:52:46 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/13 11:04:06 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/13 11:11:44 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "whatever.hpp"
 
 int main(void) {
-	try{
-		Bureaucrat A1("ab", 5);
-		Bureaucrat A11;
-		ShrubberyCreationForm A3("A22");
-		A1.executeForm(A3);
-		RobotomyRequestForm A4("A44");
-		PresidentialPardonForm A5("A55");
+   int i = 39;
+   int j = 20;
+   std::cout << "Max(i, j): " << Max(i, j) << std::endl; 
 
-		A3.execute(A1);
-		A4.execute(A1);
-		A5.execute(A1);
-		A1.setGrade(12);
-		std::cout << A11 << std::endl;
-		std::cout << A1 << std::endl;
-	}
-	catch(std::exception& ex){
-		std::cout << ex.what() << std::endl;
-	}
-	return (0);
+   double f1 = 13.5; 
+   double f2 = 20.7; 
+   std::cout << "Max(f1, f2): " << Max(f1, f2) << std::endl; 
+
+   std::string s1 = "Hello"; 
+   std::string s2 = "World"; 
+   std::cout << "Max(s1, s2): " << Max(s1, s2) << std::endl; 
+
+   return 0;
 }

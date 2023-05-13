@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 11:13:17 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 17:55:05 by sharrach         ###   ########.fr       */
+/*   Created: 2023/04/08 22:28:12 by sharrach          #+#    #+#             */
+/*   Updated: 2023/04/08 22:34:38 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,32 @@ RobotomyRequestForm::RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm  constructor" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("", 72, 45), target(target){
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("", 72, 45) {
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm  destructor" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : target(other.target) {
-	std::cout << "RobotomyRequestForm copy constructor";
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) {
+	std::cout << "RobotomyRequestForm copy constructor"
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& copy) {
 	std::cout << "RobotomyRequestForm copy assignement operator" << std::endl;
-	this->target = copy.target;
-	return (*this);
 }
 
-std::string RobotomyRequestForm::getTarget() const {
-	return (this->target);
+std::string getTarget() const {
+	return this->target;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
-	if (executor.getGrade() < 72 && executor.getGrade() < 45)
-	{
-		srand(time(NULL));
-		int random = 1 + (rand() % 2);
-		switch(random) {
-			case 1:
-				std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
-			default:
-				std::cout << this->getTarget() << " the robotomy failed." << std::endl;
-		}
+void RobotomyRequestForm::execute(const Bureaucrat& executor) {
+	srand(time(NULL));
+	switch(rand() % 2 + 1) {
+		case 1:
+			std::cout << this->getTarget() << "has been robotomized successfully" << std::endl;
+		case 2:
+			std::cout << "the robotomy failed." << std::endl;
 	}
-	else
-		throw GradeTooLowException();
 
 }

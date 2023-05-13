@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 07:15:25 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/06 12:32:14 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/06 19:58:43 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/08 14:27:04 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define AFORM_HPP
 
 #include <iostream>
-#include <cstring>
 #include <exception>
 #include "Bureaucrat.hpp"
 
@@ -34,23 +33,27 @@ public:
 	int getSgrade() const;
 	
 	void beSigned(Bureaucrat obj);
-	virtual void execute(Bureaucrat const & executor) = 0;
-private:
-	const std::string name;
-	bool isSigned;
-	const int grade_s;
-	const int grade_ex;
-	class GradeTooLowExeption : public std::exception {
-		const char* what() const throw() {
-			return "too low";
-		}
-	};
+	
+	virtual void execute(Bureaucrat const& executor) const = 0;
+
 	class GradeTooHighException : public std::exception {
 		const char* what() const throw() {
 			return "too high";
 		}
 	};
+
+	class GradeTooLowException : public std::exception {
+		const char* what() const throw() {
+			return "too low";
+		}
+	};
+private:
+	const std::string name;
+	bool isSigned;
+	const int grade_s;
+	const int grade_ex;
 };
 
 std::ostream& operator<<(std::ostream& os, const AForm& obj);
+
 #endif

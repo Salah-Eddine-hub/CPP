@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:41:16 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/08 14:45:52 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:36:40 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 
 	if (!infile)
 		std::cerr << "the file couldn't open!!" << std::endl;
-	if (executor.getGrade() < 137 && executor.getGrade() < 145){
+	if (executor.getGrade() <= 137 && executor.getGrade() <= 145){
 		infile.open(this->getTarget() + "_Shrubbery");
 		infile << "                 *" << std::endl;
 		infile << "                ***" << std::endl;

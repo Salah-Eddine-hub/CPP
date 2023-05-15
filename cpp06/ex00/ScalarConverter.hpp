@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:34 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/12 19:24:42 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:12:03 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,15 @@ public:
 	ScalarConverter(const ScalarConverter& other);
 	ScalarConverter& operator=(const ScalarConverter& copy);
 	void convert(std::string input);
+	std::string getinput(void);
 	int converToint(void);
 	float converTofloat(void);
 	double converTodouble(void);
 	char converTochar(void);
+	bool isint();
+	bool isdouble();
+	bool isfloat();
+	
 private:
 	std::string input;
 };

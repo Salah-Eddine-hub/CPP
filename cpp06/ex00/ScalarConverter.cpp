@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:21:20 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/15 18:42:46 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/17 14:38:19 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 ScalarConverter::ScalarConverter() {
 	std::cout << "ScalarConverter default constructor" << std::endl;
+}
+
+ScalarConverter::ScalarConverter(std::string input) : input(input) {
+	convert(this->input);
 }
 
 ScalarConverter::~ScalarConverter() {
@@ -37,46 +41,59 @@ std::string ScalarConverter::getinput(void) {
 }
 
 void ScalarConverter::convert(std::string put) {
-	(void)put;
-	if (isint()){
-		converTochar();
-		converTofloat();
-		converTodouble();
+	if (ischar(put)){
+		std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " <<  converTofloat() << std::endl;
+		std::cout << "double : " <<  converTodouble() << std::endl;
+		
 	}
-	else if(isfloat()) {
-		converTochar();
-		converToint();
-		converTodouble();
+	if (isint(put)){
+		std::cout << "char : " <<  converTochar() << std::endl;
+		std::cout << "float : " <<  converTofloat() << std::endl;
+		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
-	else if(isdouble()) {
+	else if(isfloat(put)) {
 		converTochar();
-		converToint();
-		converTofloat();
+		std::cout << "char : " <<  converTochar() << std::endl;
+		std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "double : " <<  converTodouble() << std::endl;
+	}
+	else if(isdouble(put)) {
+		std::cout << "char : " <<  converTochar() << std::endl;
+		std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " <<  converTofloat() << std::endl;
 	}
 }
 
-bool ScalarConverter::isint() {
-	for(int i = 0; this->input[i]; i++) {
-		if (this->input[i] >= '0' && this->input[i] <= '9')
+bool ScalarConverter::ischar(std::string input) {
+	if (input[0] > 32 && input[0] < 127){
+		return (1);
+	}
+	return(0);
+}
+
+bool ScalarConverter::isint(std::string input) {
+	for(int i = 0; input[i]; i++) {
+		if (input[i] >= '0' && input[i] <= '9')
 			continue;
 		return (0);
 	}
 	return(1);
 }
 
-bool ScalarConverter::isdouble() {
-	for(int i = 0; this->input[i]; i++) {
-		if ((this->input[i] >= '0' && this->input[i] <= '9') || this->input[i] == '.')
+bool ScalarConverter::isdouble(std::string input) {
+	for(int i = 0; input[i]; i++) {
+		if ((input[i] >= '0' && input[i] <= '9') || input[i] == '.')
 			continue;
 		return (0);
 	}
 	return(1);
 }
 
-bool ScalarConverter::isfloat() {
-	for(int i = 0; this->input[i]; i++) {
-		if ((this->input[i] >= '0' && this->input[i] <= '9' 
-			&& this->input[this->input.length() - 1] == 'f') || this->input[i] == '.')
+bool ScalarConverter::isfloat(std::string input) {
+	for(int i = 0; input[i]; i++) {
+		if ((input[i] >= '0' && input[i] <= '9' 
+			&& input[input.length() - 1] == 'f') || input[i] == '.')
 			continue;
 		return (0);
 	}

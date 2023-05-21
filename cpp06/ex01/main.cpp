@@ -5,27 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 13:45:51 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/18 16:47:42 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/21 15:32:51 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/21 17:17:37 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int ac, char* av[]) {
-
-	// std::string a = "2.3";
-	// float str = atof(a.c_str());
+int main(void) {
+	Data* data = new Data();
+	Serializer raw;
 	
-	// std::stringstream ss;
-	// ss << a;
-	// ss >> str;
-	// std::string str = ss.str();
-	// std::cout << str << std::endl;
-	if (ac != 2){
-		std::cerr << "Wrong num of argument!" << std::endl;
-		return (0);
-	}
-	ScalarConverter convert(av[1]);
-	return (0);
+	data->setfloat(4.55f);
+	data->setint(4);
+	std::cout << sizeof(data) << std::endl;
+	std::cout << data->getfloat() << std::endl;
+	std::cout << data->getint() << std::endl;
+	uintptr_t f = raw.serialize(data);
+	std::cout << f << std::endl;
+	std::cout << f << std::endl;
+	Data* d = raw.deserialize(f);
+	std::cout << "float: " << d->getfloat() << std::endl;
+	std::cout << "int: " << d->getint() << std::endl;
+	
+	return 0;
 }

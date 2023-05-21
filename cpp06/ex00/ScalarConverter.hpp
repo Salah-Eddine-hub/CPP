@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 13:47:34 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/17 14:31:20 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:09:30 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <exception>
+#include <iomanip>
 
 class ScalarConverter{
 public:
@@ -34,9 +37,20 @@ public:
 	bool isdouble(std::string input);
 	bool isfloat(std::string input);
 	
+	class NonDisplayable : public std::exception {
+		const char* what() const throw() {
+			return "Non Displayable charachter";
+		}
+	};
+
+	class Impossible : public std::exception {
+		const char* what() const throw() {
+			return "Imposible to convert";
+		}
+	};
 private:
 	std::string input;
 };
 
-std::ostream& operator<<(std::ostream os, const ScalarConverter& obj);
+// std::ostream& operator<<(std::ostream os, const ScalarConverter& obj);
 #endif

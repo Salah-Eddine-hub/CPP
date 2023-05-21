@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:21:20 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/17 14:38:19 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:09:24 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,39 +41,58 @@ std::string ScalarConverter::getinput(void) {
 }
 
 void ScalarConverter::convert(std::string put) {
-	if (ischar(put)){
-		std::cout << "int : " <<  converToint() << std::endl;
-		std::cout << "float : " <<  converTofloat() << std::endl;
+	if (isint(put)){
+		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
+		if (put == "nan")
+			std::cout << "int : impossible" << std::endl;
+		else
+			std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
+		std::cout << "double : " <<  converTodouble() << std::endl;
+	}
+	else if (ischar(put)){
+		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
+		if (put == "nan")
+			std::cout << "int : impossible" << std::endl;
+		else
+			std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " << std::setprecision(1) << std::fixed << converTofloat()  << 'f' << std::endl;
 		std::cout << "double : " <<  converTodouble() << std::endl;
 		
 	}
-	if (isint(put)){
-		std::cout << "char : " <<  converTochar() << std::endl;
-		std::cout << "float : " <<  converTofloat() << std::endl;
-		std::cout << "double : " <<  converTodouble() << std::endl;
-	}
 	else if(isfloat(put)) {
-		converTochar();
-		std::cout << "char : " <<  converTochar() << std::endl;
-		std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
+		if (put == "nan")
+			std::cout << "int : impossible" << std::endl;
+		else
+			std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
 		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
 	else if(isdouble(put)) {
-		std::cout << "char : " <<  converTochar() << std::endl;
-		std::cout << "int : " <<  converToint() << std::endl;
-		std::cout << "float : " <<  converTofloat() << std::endl;
+		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
+		if (put == "nan")
+			std::cout << "int : impossible" << std::endl;
+		else
+			std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
+		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
 }
 
 bool ScalarConverter::ischar(std::string input) {
-	if (input[0] > 32 && input[0] < 127){
-		return (1);
+	if ((input[0] > 32 && input[0] < 48) || (input[0] > 57 && input[0] < 127)){
+		return (true);
 	}
-	return(0);
+	else{
+		return(false);	
+	}
 }
 
 bool ScalarConverter::isint(std::string input) {
 	for(int i = 0; input[i]; i++) {
+		if (input[i] == '-' || input[i] == '+')
+			continue;
 		if (input[i] >= '0' && input[i] <= '9')
 			continue;
 		return (0);
@@ -82,36 +101,69 @@ bool ScalarConverter::isint(std::string input) {
 }
 
 bool ScalarConverter::isdouble(std::string input) {
+	int dtnbr = 0;
 	for(int i = 0; input[i]; i++) {
-		if ((input[i] >= '0' && input[i] <= '9') || input[i] == '.')
+		if (input[i] == '.')
+			dtnbr++;
+		if (std::isdigit(input[i]) || input[i] == '.')
 			continue;
 		return (0);
+	}
+	if (dtnbr > 1){
+		std::cout << "Too many ." << std::endl;
+		return 0;
 	}
 	return(1);
 }
 
 bool ScalarConverter::isfloat(std::string input) {
+	int dtnbr = 0;
 	for(int i = 0; input[i]; i++) {
-		if ((input[i] >= '0' && input[i] <= '9' 
-			&& input[input.length() - 1] == 'f') || input[i] == '.')
+		if (input[input.length() - 1] != 'f' )
+			return 0;
+		else
 			continue;
+		if (input[i] == '.')
+			dtnbr++;
+		if (std::isdigit(input[i]) || input[i] == '.')
+			continue;
+		
 		return (0);
+	}
+	if (dtnbr > 1){
+		std::cout << "Too many ." << std::endl;
+		return 0;
 	}
 	return(1);
 }
-
+	// int i;
+	// std::stringstream ss;
+	
+	// ss << a;
+	// ss >> i;
 int ScalarConverter::converToint(void) {
-	return (static_cast<int>(std::stoi(this->input.c_str())));
+	return (static_cast<int>(std::atoi(this->input.c_str())));
 }
 
 double ScalarConverter::converTodouble(void) {
-	return (static_cast<double>(std::stod(this->input)));
+	return (static_cast<double>(std::atof(this->input.c_str())));
 }
 
 float ScalarConverter::converTofloat(void) {
-	return (static_cast<float>(std::stof(this->input)));
+	return (static_cast<float>(std::atof(this->input.c_str())));
 }
 
 char ScalarConverter::converTochar(void) {
-	return (static_cast<char>(this->input[0]));
+	int val = this->converToint();
+	if ((val > 32 && val < 48) || (val > 57 && val < 127)){
+		return (static_cast<char>(std::atoi(this->input.c_str())));
+	}
+	else if (val >= 0 && val <= 32){
+		std::cout << "Non Displayable";
+		return '\0';
+	}
+	else{
+		std::cout << "impossible";
+		return '\0';
+	}
 }

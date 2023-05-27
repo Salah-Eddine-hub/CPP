@@ -5,17 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/21 18:12:10 by sharrach          #+#    #+#              #
-#    Updated: 2023/05/22 17:18:53 by sharrach         ###   ########.fr        #
+#    Created: 2023/05/24 15:29:04 by sharrach          #+#    #+#              #
+#    Updated: 2023/05/24 15:29:19 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Base
+NAME = Array
 
-HEADER =	Base.hpp
+HEADER =	Array.hpp
 
 SRCS =	main.cpp\
-		Base.cpp
 
 CC =	c++
 

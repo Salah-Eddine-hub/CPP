@@ -1,12 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.cpp                                              :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 18:14:41 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/21 18:14:42 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/24 14:19:57 by sharrach          #+#    #+#             */
+/*   Updated: 2023/05/26 18:00:42 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "iter.hpp"
+
+template<typename T>
+void test(T& arg){
+	std::cout << arg << std::endl;
+}
+
+int main(void) {
+	int arr[] = {1, 3, 4, 6, 7, 8};
+
+	Iter(arr, 5, test);
+	return 0;
+}

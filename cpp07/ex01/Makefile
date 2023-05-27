@@ -5,17 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/21 18:12:10 by sharrach          #+#    #+#              #
-#    Updated: 2023/05/22 17:18:53 by sharrach         ###   ########.fr        #
+#    Created: 2023/05/24 14:19:32 by sharrach          #+#    #+#              #
+#    Updated: 2023/05/24 14:19:54 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Base
+NAME = Iter
 
-HEADER =	Base.hpp
+HEADER =	iter.hpp
 
 SRCS =	main.cpp\
-		Base.cpp
 
 CC =	c++
 

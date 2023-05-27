@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:21:20 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/21 17:09:24 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:07:59 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,69 +40,77 @@ std::string ScalarConverter::getinput(void) {
 	return (this->input);
 }
 
+void ScalarConverter::setInput(void){
+	this->input = this->input[1];
+}
 void ScalarConverter::convert(std::string put) {
-	if (isint(put)){
-		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
-		if (put == "nan")
-			std::cout << "int : impossible" << std::endl;
-		else
-			std::cout << "int : " <<  converToint() << std::endl;
+	if (put == "nan"){
+		std::cout << "char : impossible" << std::endl;
+		std::cout << "int : impossible" << std::endl;
 		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
 		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
 	else if (ischar(put)){
-		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
-		if (put == "nan")
-			std::cout << "int : impossible" << std::endl;
-		else
-			std::cout << "int : " <<  converToint() << std::endl;
-		std::cout << "float : " << std::setprecision(1) << std::fixed << converTofloat()  << 'f' << std::endl;
-		std::cout << "double : " <<  converTodouble() << std::endl;
+		std::cout << "char : " << "'" << this->input[0] << "'"<< std::endl;
+		std::cout << "int : " <<  static_cast<int>(this->input[0]) << std::endl;
+		std::cout << "float : " << std::setprecision(1) << std::fixed << static_cast<double>(this->input[0])  << 'f' << std::endl;
+		std::cout << "double : " <<  static_cast<double>(this->input[0]) << std::endl;
 		
+	}
+	else if (isint(put)){
+		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
+		std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
+		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
 	else if(isfloat(put)) {
 		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
-		if (put == "nan")
-			std::cout << "int : impossible" << std::endl;
-		else
-			std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "int : " <<  converToint() << std::endl;
 		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
 		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
 	else if(isdouble(put)) {
 		std::cout << "char : " << "'" << converTochar() << "'"<< std::endl;
-		if (put == "nan")
-			std::cout << "int : impossible" << std::endl;
-		else
-			std::cout << "int : " <<  converToint() << std::endl;
+		std::cout << "int : " <<  converToint() << std::endl;
 		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
 		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
 }
 
-bool ScalarConverter::ischar(std::string input) {
-	if ((input[0] > 32 && input[0] < 48) || (input[0] > 57 && input[0] < 127)){
-		return (true);
+int ScalarConverter::ischar(std::string input) {
+	if (input.length() == 3 && (input[0] == '\'' && input[2] == '\'')){
+		setInput();
+		return (1);
 	}
-	else{
-		return(false);	
-	}
+	return(0);
 }
 
-bool ScalarConverter::isint(std::string input) {
+int ScalarConverter::isint(std::string input) {
+	int signbr = 0;
 	for(int i = 0; input[i]; i++) {
-		if (input[i] == '-' || input[i] == '+')
+		if (input[i] == '-' || input[i] == '+'){
+			signbr ++;
 			continue;
-		if (input[i] >= '0' && input[i] <= '9')
+		}
+		if (std::isdigit(input[i]))
 			continue;
 		return (0);
 	}
+	if (signbr > 1)
+		return 0;
 	return(1);
 }
 
-bool ScalarConverter::isdouble(std::string input) {
+int ScalarConverter::isdouble(std::string input) {
 	int dtnbr = 0;
+	int signbr = 0;
 	for(int i = 0; input[i]; i++) {
+		if (input == "-inf" || input == "+inf" || input == "inf")
+			return 1;
+		if (input[i] == '-' || input[i] == '+'){
+			signbr ++;
+			continue;
+		}
 		if (input[i] == '.')
 			dtnbr++;
 		if (std::isdigit(input[i]) || input[i] == '.')
@@ -113,52 +121,60 @@ bool ScalarConverter::isdouble(std::string input) {
 		std::cout << "Too many ." << std::endl;
 		return 0;
 	}
+	if (signbr > 1)
+		return 0;
 	return(1);
 }
 
-bool ScalarConverter::isfloat(std::string input) {
+int ScalarConverter::isfloat(std::string input) {
 	int dtnbr = 0;
-	for(int i = 0; input[i]; i++) {
-		if (input[input.length() - 1] != 'f' )
-			return 0;
+	int signbr = 0;
+	if (input[input.length() - 1] != 'f')
+		return 0;
+	for(size_t i = 0; i < input.length() - 1; i++) {
+		if (input == "-inff" || input == "+inff" || input == "inff")
+			return 1;
+		if (input[i] == '-' || input[i] == '+'){
+			signbr ++;
+			continue;
+		}
+		if (!std::isdigit(input[i]) && input[i] != '.')
+			return (0);
+		if (input[i] == '.')
+			dtnbr++;
 		else
 			continue;
-		if (input[i] == '.')
-			dtnbr++;
-		if (std::isdigit(input[i]) || input[i] == '.')
+		if (std::isdigit(input[i]) || input[i] == '.')	
 			continue;
-		
 		return (0);
 	}
 	if (dtnbr > 1){
 		std::cout << "Too many ." << std::endl;
 		return 0;
 	}
+	if (signbr > 1)
+		return 0;
 	return(1);
 }
-	// int i;
-	// std::stringstream ss;
-	
-	// ss << a;
-	// ss >> i;
+
 int ScalarConverter::converToint(void) {
-	return (static_cast<int>(std::atoi(this->input.c_str())));
+	return (static_cast<int>(atoi(this->input.c_str())));
 }
 
 double ScalarConverter::converTodouble(void) {
-	return (static_cast<double>(std::atof(this->input.c_str())));
+	return (static_cast<double>(atof(this->input.c_str())));
 }
 
 float ScalarConverter::converTofloat(void) {
-	return (static_cast<float>(std::atof(this->input.c_str())));
+	return (static_cast<float>(atof(this->input.c_str())));
 }
 
 char ScalarConverter::converTochar(void) {
-	int val = this->converToint();
-	if ((val > 32 && val < 48) || (val > 57 && val < 127)){
-		return (static_cast<char>(std::atoi(this->input.c_str())));
+	int i = this->converToint();
+	if ((i > 32 && i < 127)){
+		return (static_cast<char>(i));
 	}
-	else if (val >= 0 && val <= 32){
+	else if (i >= 0 && i <= 32){
 		std::cout << "Non Displayable";
 		return '\0';
 	}

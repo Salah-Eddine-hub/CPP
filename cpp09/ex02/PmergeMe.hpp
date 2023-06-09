@@ -14,6 +14,18 @@
 #define PMERGEME_HPP
 
 #include <iostream>
+#include <exception>
+#include <vector>
+#include <deque>
 
+class PmergeMe{
+public:
+	PmergeMe(std::string input);
+	~PmergeMe();
+private:
+	// std::vector<int> vecsor;
+	// std::deque<int> deqinso;
+
+};
 
 #endif

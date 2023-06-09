@@ -11,3 +11,11 @@
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+PmergeMe::PmergeMe(std::string input){
+	std::cout << input << std::endl;
+}
+
+PmergeMe::~PmergeMe(){
+}
+

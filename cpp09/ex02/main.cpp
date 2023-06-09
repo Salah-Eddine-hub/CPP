@@ -12,10 +12,16 @@
 
 #include "PmergeMe.hpp"
 
-int main(int ac, char* av[]){
-	if (ac != 2){
+int main(int ac, char** av){
+	if (ac == 1){
 		std::cerr << "wrong num of argument " << std::endl;
 		return 1;
+	}
+	try{
+		PmergeMe pmerge(av[1]);
+	}
+	catch(std::invalid_argument& e){
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 	return 0;
 }

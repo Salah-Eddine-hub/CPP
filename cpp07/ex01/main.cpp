@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 14:19:57 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/26 18:00:42 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:47:24 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void test(T& arg){
 int main(void) {
 	int arr[] = {1, 3, 4, 6, 7, 8};
 
-	Iter(arr, 5, test);
+	Iter(arr, 4, test);
 	return 0;
 }

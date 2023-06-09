@@ -65,6 +65,10 @@
         "optional": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "memory_resource": "cpp",
+        "__memory": "cpp"
     }
 }

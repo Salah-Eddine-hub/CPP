@@ -5,29 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 18:07:47 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/29 20:49:25 by sharrach         ###   ########.fr       */
+/*   Created: 2023/05/29 22:07:37 by sharrach          #+#    #+#             */
+/*   Updated: 2023/06/03 13:48:51 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
+#include "easyfind.hpp"
+#include <map>
 
-int main(){
-	try{
-		// Array<int> test(10);
-		
-		// for (unsigned long i = 0; i < 10; i++){
-		// 	test[i] = i;
-		// 	std::cout << test[i] << std::endl;
-		// }
-		Array<char> test1(10);
-		
-		for (unsigned long j = 0; j < 10; j++){
-			test1[j] = j + 48;
-			std::cout << test1[j] << std::endl;
-		}
-	}
-	catch(std::exception& e){
-		std::cout << e.what() << std::endl;
-	}
+int main(void){
+	std::vector<int> f;
+
+	for (size_t i = 0; i < 101; i++)
+		f.push_back(i);
+
+	easyfind(f, 100);
+	return (0);
 }

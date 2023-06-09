@@ -5,29 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 18:07:47 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/29 20:49:25 by sharrach         ###   ########.fr       */
+/*   Created: 2023/06/08 08:29:50 by sharrach          #+#    #+#             */
+/*   Updated: 2023/06/08 23:21:31 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
+#include "RPN.hpp"
 
-int main(){
+int main(int ac, char* av[]){
+	if (ac != 2){
+		std::cerr << "Error: wrong num of args" << std::endl;
+		return 0;
+	}
 	try{
-		// Array<int> test(10);
-		
-		// for (unsigned long i = 0; i < 10; i++){
-		// 	test[i] = i;
-		// 	std::cout << test[i] << std::endl;
-		// }
-		Array<char> test1(10);
-		
-		for (unsigned long j = 0; j < 10; j++){
-			test1[j] = j + 48;
-			std::cout << test1[j] << std::endl;
-		}
+		RPN src(av[1]);
 	}
-	catch(std::exception& e){
-		std::cout << e.what() << std::endl;
+	catch(std::invalid_argument& e){
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
+	return 1;
 }

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:21:20 by sharrach          #+#    #+#             */
-/*   Updated: 2023/05/26 17:07:59 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/05/29 13:15:46 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,18 @@ std::string ScalarConverter::getinput(void) {
 void ScalarConverter::setInput(void){
 	this->input = this->input[1];
 }
+
 void ScalarConverter::convert(std::string put) {
-	if (put == "nan"){
+	if (!checkput(put)){
+		std::cout << "ERROR" << std::endl;
+	}
+else	if (put == "nan"){
 		std::cout << "char : impossible" << std::endl;
 		std::cout << "int : impossible" << std::endl;
 		std::cout << "float : " << std::setprecision(1) << std::fixed <<  converTofloat()  << 'f' << std::endl;
 		std::cout << "double : " <<  converTodouble() << std::endl;
 	}
-	else if (ischar(put)){
+else	if (ischar(put)){
 		std::cout << "char : " << "'" << this->input[0] << "'"<< std::endl;
 		std::cout << "int : " <<  static_cast<int>(this->input[0]) << std::endl;
 		std::cout << "float : " << std::setprecision(1) << std::fixed << static_cast<double>(this->input[0])  << 'f' << std::endl;
@@ -77,6 +81,30 @@ void ScalarConverter::convert(std::string put) {
 	}
 }
 
+int ScalarConverter::checkput(std::string input){
+	int signbr = 0;
+	int dtnbr = 0;
+	int hh = 0;
+
+	for(int i = 0; input[i]; i++){
+		if (input[i] == '-' || input[i] == '+'){
+			signbr ++;
+			hh = 1;
+			continue;
+		}
+		if (input[i] == '.')
+			dtnbr++;
+	}
+	if (signbr > 1)
+		return 0;
+	if (dtnbr > 1){
+		return 0;
+	}
+	if (hh == 1 && (input.find('+') != 0 && input.find('-') != 0))
+		return(0);
+	return 1;
+}
+
 int ScalarConverter::ischar(std::string input) {
 	if (input.length() == 3 && (input[0] == '\'' && input[2] == '\'')){
 		setInput();
@@ -86,79 +114,53 @@ int ScalarConverter::ischar(std::string input) {
 }
 
 int ScalarConverter::isint(std::string input) {
-	int signbr = 0;
 	for(int i = 0; input[i]; i++) {
-		if (input[i] == '-' || input[i] == '+'){
-			signbr ++;
-			continue;
-		}
 		if (std::isdigit(input[i]))
 			continue;
 		return (0);
-	}
-	if (signbr > 1)
-		return 0;
+		}
 	return(1);
 }
 
 int ScalarConverter::isdouble(std::string input) {
-	int dtnbr = 0;
-	int signbr = 0;
 	for(int i = 0; input[i]; i++) {
 		if (input == "-inf" || input == "+inf" || input == "inf")
 			return 1;
-		if (input[i] == '-' || input[i] == '+'){
-			signbr ++;
+		if (input[i] == '-' || input[i] == '+')
 			continue;
-		}
-		if (input[i] == '.')
-			dtnbr++;
 		if (std::isdigit(input[i]) || input[i] == '.')
 			continue;
 		return (0);
 	}
-	if (dtnbr > 1){
-		std::cout << "Too many ." << std::endl;
-		return 0;
-	}
-	if (signbr > 1)
-		return 0;
 	return(1);
 }
 
 int ScalarConverter::isfloat(std::string input) {
-	int dtnbr = 0;
-	int signbr = 0;
 	if (input[input.length() - 1] != 'f')
 		return 0;
-	for(size_t i = 0; i < input.length() - 1; i++) {
+	for(size_t i = 0; i < input.length() - 1; i++) {\
 		if (input == "-inff" || input == "+inff" || input == "inff")
 			return 1;
-		if (input[i] == '-' || input[i] == '+'){
-			signbr ++;
+		if (input[i] == '-' || input[i] == '+')
 			continue;
-		}
 		if (!std::isdigit(input[i]) && input[i] != '.')
 			return (0);
-		if (input[i] == '.')
-			dtnbr++;
 		else
 			continue;
 		if (std::isdigit(input[i]) || input[i] == '.')	
 			continue;
 		return (0);
 	}
-	if (dtnbr > 1){
-		std::cout << "Too many ." << std::endl;
-		return 0;
-	}
-	if (signbr > 1)
-		return 0;
 	return(1);
 }
 
 int ScalarConverter::converToint(void) {
-	return (static_cast<int>(atoi(this->input.c_str())));
+	long long limit;
+	limit = static_cast<long long>(atoll(this->input.c_str()));
+	if (limit > INT_MAX || limit < INT_MIN)
+		return 0;
+	else
+		return (static_cast<int>(atoi(this->input.c_str())));
 }
 
 double ScalarConverter::converTodouble(void) {

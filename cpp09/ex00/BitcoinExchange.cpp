@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:16:02 by sharrach          #+#    #+#             */
-/*   Updated: 2023/06/08 08:05:57 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/06/09 20:44:43 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ int BitcoinExchange::get_values(std::string input)
 			return 0;
 		}
 		size_t pos = line.find('|');
+		if((int)pos == -1)
+		{
+			std::cerr << "Error: bad input => " << line << std::endl;
+			continue;
+		}
 		date = line.substr(0, pos);
 		date = ft_strtrim(date);
 		std::string bitValue = line.substr(pos + 1, line.length() - date.length() - 1);
@@ -144,12 +149,12 @@ bool BitcoinExchange::check_values(float values)
 	}
 	else if (values < 0)
 	{
-		std::cerr << "Error: the values is less than 0: " << values << std::endl;
+		std::cerr << "Error: the values is less than 0: " << std::endl;
 		return false;
 	}
-	else if (values > INT_MAX)
+	else if (values > 1000)
 	{
-		std::cerr << "Error: that is too large number: " << values << std::endl;
+		std::cerr << "Error: that is too large number." << std::endl;
 		return false;
 	}
 	return 1;

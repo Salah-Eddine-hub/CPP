@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 17:16:09 by sharrach          #+#    #+#             */
-/*   Updated: 2023/06/07 19:56:18 by sharrach         ###   ########.fr       */
+/*   Updated: 2023/06/09 20:41:37 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <cstring>
 #include <string>
 #include <time.h>
+#include <iomanip>
 #include <fstream>
 #include <map>
 

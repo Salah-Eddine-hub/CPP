@@ -1,0 +1,11 @@
++ test: 
+2010-01-00 | 3 when day == 0
+2009-01-01 | 3 when time is srar mn awl time
+fix date parsing
+
+
+fixed? yes
+// ./RPN "+ 8 9"
+// ./RPN "0 / 0"
+// ./RPN "7" ==> 0 ?
+// ./RPN "77 +" 

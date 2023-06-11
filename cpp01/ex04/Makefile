@@ -1,0 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sharrach <sharrach@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/01 14:22:15 by sharrach          #+#    #+#              #
+#    Updated: 2023/03/11 17:30:42 by sharrach         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = sed
+
+SRCS =	main.cpp
+
+CC =	c++
+
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+
+OBJS =	$(SRCS:.cpp=.o)
+
+RM	= rm -f
+
+%.o: %.cpp
+			$(CC) $(CPPFLAGS) -c $< -o $@
+
+$(NAME) :	$(OBJS)
+			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+all		:	$(NAME)
+
+clean	:
+		$(RM) $(OBJS)
+
+fclean	: clean
+			$(RM) $(NAME)
+
+re		:	fclean all

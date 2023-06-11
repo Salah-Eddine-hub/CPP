@@ -1,0 +1,16 @@
+this part about checking the head of database of btc not using it anymore cause don't mandatory
+
+// if (infile.is_open()){
+// 	// std::cout << "--here" << std::endl;
+// 	std::getline(infile, line, '\n');
+// 	char* linetmp = new char[line.length() + 1];
+// 	std::strcpy(linetmp, line.c_str());
+// 	date = std::strtok(linetmp, ",");
+// 	std::string exchangetrm =  line.substr(date.length() + 1, line.length() - date.length() - 1);
+// 	// std::cout << date << "," << exchangetrm << std::endl;
+// 	if(date.compare("date") != 0 || exchangetrm.compare("exchange_rate") != 0){
+// 		std::cerr << "Error: correct the term" << std::endl;
+// 		return 0;
+// 	}
+// 	// std::cout << echangetrm << std::endl;
+// }
